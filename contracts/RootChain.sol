@@ -65,7 +65,6 @@ contract RootChain{
     address target;
 
     address[] openWithdrawals;
-    mapping(address => uint) public openWithdrawalAmounts;
     mapping(address => uint) public openWithdrawalIndex;
 
     struct Exit {
@@ -268,7 +267,7 @@ contract RootChain{
         uint256 utxoPos;
         uint256 exitableAt;
         require(address(0) == _token, "Token must be ETH.");
-        (exitableAt, utxoPos, token_address) = getNextExit(_token);
+        (exitableAt, token_address,utxoPos) = getNextExit(_token);
         PriorityQueue queue = PriorityQueue(exitsQueues[_token]);
         Exit memory currentExit = exits[utxoPos];
         while (exitableAt < block.timestamp) {
@@ -281,15 +280,14 @@ contract RootChain{
                 (balance,holder) = token.getBalanceAndHolderByIndex(i);
                 holder.transfer(balance);
             }
+            finsher(token_address);
             if (currentExit.owner != address(0)) {
                 currentExit.owner.transfer(EXIT_BOND);
             }
-
             queue.delMin();
             delete exits[utxoPos].owner;
-
             if (queue.currentSize() > 0) {
-                (exitableAt, utxoPos) = getNextExit(_token);
+                (exitableAt, token_address,utxoPos) = getNextExit(_token);
             } else {
                 return;
             }
@@ -395,13 +393,12 @@ contract RootChain{
         }
     }
 
-    function finsher() internal {
-                if(userOrders[_order.maker].length > 1){
-            tokenIndex = userOrderIndex[_orderId];
-            lastTokenIndex = userOrders[_order.maker].length.sub(1);
-            lastToken = userOrders[_order.maker][lastTokenIndex];
-            userOrders[_order.maker][tokenIndex] = lastToken;
-            userOrderIndex[lastToken] = tokenIndex;
-        }
+    function finsher(address _token) internal {
+            tokenIndex = openWithdrawalIndex[_token];
+            lastTokenIndex = openWithdrawals.length.sub(1);
+            lastToken = openWithdrawals[lastTokenIndex];
+            openWithdrawals[tokenIndex] = lastToken;
+            openWithdrawalIndex[lastToken] = tokenIndex;
+            openWithdrawals.length--;
     }
 }

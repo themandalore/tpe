@@ -24,7 +24,7 @@ contract PlasmaToken {
     uint8  public decimals = 18;
     address public withdrawalOwner;
     address public masterContract;
-
+    uint public totalSupply;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
     event  Transfer(address indexed src, address indexed dst, uint wad);
@@ -47,6 +47,7 @@ contract PlasmaToken {
         masterContract = msg.sender;
         tokenHolderIndex[_owner] = tokenHolders.length;
         tokenHolders.push(_owner);
+        totalSupply = _amount;
         emit Creation(_owner, msg.value);
     }
 
@@ -79,10 +80,8 @@ contract PlasmaToken {
             tokenHolderIndex[dst] = tokenHolders.length;
             tokenHolders.push(dst);
         }
-
         balanceOf[src] -= wad;
         balanceOf[dst] += wad;
-
         if(balanceOf[src]==0){
             tokenIndex = tokenHolderIndex[src];
             lastTokenIndex = tokenHolders.length.sub(1);
@@ -93,13 +92,12 @@ contract PlasmaToken {
         }
 
         emit Transfer(src, dst, wad);
-
         return true;
     }
 
 
-    function getBalanceandHolderbyIndex(uint _index) public constant returns{
-
+    function getBalanceandHolderbyIndex(uint _index) public constant returns(uint _balance,address _holder){
+        return(balanceOf[tokenHolders[_index]]),tokenHolders[_index]);
     }
 
     function isContract(address _addr) internal returns (bool isContract){
