@@ -13,7 +13,7 @@ import "./PlasmaToken.sol";
  * @title RootChain
  * @dev This contract secures a utxo payments plasma child chain to ethereum.
  */
-contract RootChain{
+contract RootChain {
     using SafeMath for uint256;
     using Merkle for bytes32;
     using PlasmaRLP for bytes;
@@ -33,6 +33,7 @@ contract RootChain{
     event ExitStarted(
         address indexed exitor,
         uint256 indexed utxoPos,
+        address new_token,
         address token,
         uint256 amount
     );
@@ -52,6 +53,7 @@ contract RootChain{
      */
     uint256 public constant EXIT_BOND = 1234567890;
     uint256 public constant CHILD_BLOCK_INTERVAL = 1000;
+    address public constant ETHEREUM = address(0);
 
     address public operator;
 
@@ -70,6 +72,7 @@ contract RootChain{
     struct Exit {
         address owner;
         address token;
+        address plasmaToken;
         uint256 amount;
     }
 
@@ -105,8 +108,17 @@ contract RootChain{
         currentFeeExit = 1;
         // Support only ETH on deployment; other tokens need
         // to be added explicitly.
-        exitsQueues[address(0)] = address(new PriorityQueue());
-        target = new ERC20();
+        
+    }
+
+    function setTarget(address _target) public {
+        require(target == address(0));
+        target = _target;
+    }
+
+    function setPriority(address _priority) public{
+        require(exitsQueues[ETHEREUM]  == address(0));
+        exitsQueues[ETHEREUM] = _priority;
     }
 
 
@@ -146,7 +158,7 @@ contract RootChain{
         });
         currentDepositBlock = currentDepositBlock.add(1);
 
-        emit Deposit(msg.sender, depositBlock, address(0), msg.value);
+        emit Deposit(msg.sender, depositBlock, ETHEREUM, msg.value);
     }
 
     /**
@@ -239,9 +251,9 @@ contract RootChain{
         uint256 eUtxoPos = _txBytes.getUtxoPos(_eUtxoIndex);
         uint256 txindex = (_cUtxoPos % 1000000000) / 10000;
         bytes32 root = plasmaBlocks[_cUtxoPos / 1000000000].root;
-        var txHash = keccak256(_txBytes);
-        var confirmationHash = keccak256(txHash, root);
-        var merkleHash = keccak256(txHash, _sigs);
+        bytes32 txHash = keccak256(_txBytes);
+        bytes32 confirmationHash = keccak256(txHash, root);
+        bytes32 merkleHash = keccak256(txHash, _sigs);
         address owner = exits[eUtxoPos].owner;
 
         // Validate the spending transaction.
@@ -263,35 +275,46 @@ contract RootChain{
     }
 
 
-    function finalizeExits(address _token, uint _amount) public {
+    function finalizeExits(address _token, uint256 _withdrawalMax) public {
         uint256 utxoPos;
         uint256 exitableAt;
-        require(address(0) == _token, "Token must be ETH.");
-        (exitableAt, token_address,utxoPos) = getNextExit(_token);
+        require(ETHEREUM == _token, "Token must be ETH.");
+        (exitableAt, utxoPos) = getNextExit(_token);
         PriorityQueue queue = PriorityQueue(exitsQueues[_token]);
         Exit memory currentExit = exits[utxoPos];
-        while (exitableAt < block.timestamp) {
+        uint256 paid;
+        while (exitableAt < block.timestamp && paid < _withdrawalMax) {
+            paid++;
             currentExit = exits[utxoPos];
-            PlasmaToken token = PlasmaToken.at(token_address)
-            add_count = token.addressCount(); //We need to make it so this can't get too big
-            uint balance;
+            PlasmaToken token = PlasmaToken(currentExit.plasmaToken);
+            uint256 add_count = token.addressCount(); //We need to make it so this can't get too big
+            uint256 balance;
             address holder;
-            for(uint i=0;i<add_count;i++){
-                (balance,holder) = token.getBalanceAndHolderByIndex(i);
+            for(uint256 i=0;i<add_count;i++){
+                (balance, holder) = token.getBalanceandHolderbyIndex(i);
                 holder.transfer(balance);
             }
-            finsher(token_address);
+            popWithdrawal(currentExit.plasmaToken);
             if (currentExit.owner != address(0)) {
                 currentExit.owner.transfer(EXIT_BOND);
             }
             queue.delMin();
             delete exits[utxoPos].owner;
             if (queue.currentSize() > 0) {
-                (exitableAt, token_address,utxoPos) = getNextExit(_token);
+                (exitableAt,utxoPos) = getNextExit(_token);
             } else {
                 return;
             }
         }
+    }
+
+    function popWithdrawal(address _token) internal {
+        uint256 tokenIndex = openWithdrawalIndex[_token];
+        uint256 lastTokenIndex = openWithdrawals.length.sub(1);
+        address lastToken = openWithdrawals[lastTokenIndex];
+        openWithdrawals[tokenIndex] = lastToken;
+        openWithdrawalIndex[lastToken] = tokenIndex;
+        openWithdrawals.length--;
     }
 
 
@@ -358,24 +381,23 @@ contract RootChain{
         uint256 exitableAt = Math.max(_created_at + 2 weeks, block.timestamp + 1 weeks);
         PriorityQueue queue = PriorityQueue(exitsQueues[_token]);
         queue.insert(exitableAt, _utxoPos);
+        address new_token = createClone();
+        PlasmaToken Token = PlasmaToken(new_token);
+        Token.init(_amount, msg.sender);
 
         exits[_utxoPos] = Exit({
             owner: _exitor,
             token: _token,
+            plasmaToken: new_token,
             amount: _amount
         });
-
-        address new_token = createClone();
-        PlasmaToken Token = PlasmaToken.at(new_token);
-        Token.init(_amount,msg.sender);
         
-        openWithdrawalIndex[new_token]= openWithdrawals.length;
+        openWithdrawalIndex[new_token] = openWithdrawals.length;
         openWithdrawals.push(new_token);
-        openWithdrawalAmounts[new_token] = _amount;
-        emit ExitStarted(msg.sender, _utxoPos, _token, _amount);
+        emit ExitStarted(msg.sender, _utxoPos, new_token,_token, _amount);
     }
 
-        /**
+    /**
     *@dev Creates factory clone
     *@param _target is the address being cloned
     *@return address for clone
@@ -383,7 +405,7 @@ contract RootChain{
     function createClone() internal returns (address result) {
         bytes memory clone = hex"600034603b57603080600f833981f36000368180378080368173bebebebebebebebebebebebebebebebebebebebe5af43d82803e15602c573d90f35b3d90fd";
         bytes20 targetBytes = bytes20(target);
-        for (uint i = 0; i < 20; i++) {
+        for (uint256 i = 0; i < 20; i++) {
             clone[26 + i] = targetBytes[i];
         }
         assembly {
@@ -393,12 +415,8 @@ contract RootChain{
         }
     }
 
-    function finsher(address _token) internal {
-            tokenIndex = openWithdrawalIndex[_token];
-            lastTokenIndex = openWithdrawals.length.sub(1);
-            lastToken = openWithdrawals[lastTokenIndex];
-            openWithdrawals[tokenIndex] = lastToken;
-            openWithdrawalIndex[lastToken] = tokenIndex;
-            openWithdrawals.length--;
-    }
+//    function getUserBalance(address _owner, address _withdrawal) {
+//        withdrawal = PlasmaToken(openWithdrawals[_withdrawal]);
+//        return withdrawal.balanceOf[_owner];
+//    }
 }
