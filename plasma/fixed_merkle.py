@@ -1,8 +1,14 @@
 from ethereum.utils import sha3
-from .constants import NULL_HASH
-from .exceptions import MemberNotExistException
-from .node import Node
+#from .constants import NULL_HASH
+from exceptions import MemberNotExistException
+from node import Node
 
+
+NULL_BYTE = b'\x00'
+NULL_HASH = NULL_BYTE * 32
+NULL_SIGNATURE = NULL_BYTE * 65
+NULL_ADDRESS = NULL_BYTE * 20
+NULL_ADDRESS_HEX = '0x' + NULL_ADDRESS.hex()
 
 class FixedMerkle(object):
 

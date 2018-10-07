@@ -1,8 +1,13 @@
 from ethereum import utils as u
-from .constants import NULL_HASH
-from .signatures import sign
-from .fixed_merkle import FixedMerkle
+#from .constants import NULL_HASH
+from signatures import sign
+from fixed_merkle import FixedMerkle
 
+NULL_BYTE = b'\x00'
+NULL_HASH = NULL_BYTE * 32
+NULL_SIGNATURE = NULL_BYTE * 65
+NULL_ADDRESS = NULL_BYTE * 20
+NULL_ADDRESS_HEX = '0x' + NULL_ADDRESS.hex()
 
 def get_empty_merkle_tree_hash(depth):
     zeroes_hash = NULL_HASH

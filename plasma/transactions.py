@@ -1,10 +1,15 @@
-from .transaction import Transaction
-from .constants import NULL_ADDRESS
+from transaction import Transaction
+#from .constants import NULL_ADDRESS
 
 
 BLKNUM_OFFSET = 1000000000
 TXINDEX_OFFSET = 10000
 
+NULL_BYTE = b'\x00'
+NULL_HASH = NULL_BYTE * 32
+NULL_SIGNATURE = NULL_BYTE * 65
+NULL_ADDRESS = NULL_BYTE * 20
+NULL_ADDRESS_HEX = '0x' + NULL_ADDRESS.hex()
 
 def decode_utxo_id(utxo_id):
     blknum = utxo_id // BLKNUM_OFFSET

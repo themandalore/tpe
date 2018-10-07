@@ -1,8 +1,14 @@
 import rlp
 from rlp.sedes import big_endian_int, binary
-from .ethereum import utils
-from .signatures import get_signer, sign
-from .constants import NULL_SIGNATURE
+from ethereum import utils
+from signatures import get_signer, sign
+#from constants import NULL_SIGNATURE
+
+NULL_BYTE = b'\x00'
+NULL_HASH = NULL_BYTE * 32
+NULL_SIGNATURE = NULL_BYTE * 65
+NULL_ADDRESS = NULL_BYTE * 20
+NULL_ADDRESS_HEX = '0x' + NULL_ADDRESS.hex()
 
 
 class Transaction(rlp.Serializable):
@@ -94,4 +100,4 @@ class Transaction(rlp.Serializable):
         self.sig2 = sign(self.hash, key)
 
 
-UnsignedTransaction = Transaction.exclude(['sig1', 'sig2'])
+#UnsignedTransaction = Transaction.exclude(['sig1', 'sig2'])

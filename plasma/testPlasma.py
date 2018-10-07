@@ -3,13 +3,16 @@ from web3 import Web3
 import requests,json, time,random
 import pandas as pd
 from Naked.toolshed.shell import execute_js, muterun_js, run_js
-# import pytest
-# import rlp
-# from .transaction import Transaction, UnsignedTransaction
-# from .fixed_merkle import FixedMerkle
-# from .utils import confirm_tx, get_deposit_hash
-# from .transactions import encode_utxo_id, decode_utxo_id
-from constants import NULL_ADDRESS, NULL_ADDRESS_HEX
+import pytest
+import rlp
+from transaction import Transaction
+from fixed_merkle import FixedMerkle
+from utils import confirm_tx, get_deposit_hash
+from transactions import encode_utxo_id, decode_utxo_id
+
+#from .constants import NULL_ADDRESS, NULL_ADDRESS_HEX
+NULL_BYTE = b'\x00'
+NULL_ADDRESS = NULL_BYTE * 20
 
 
 node_url ="http://localhost:7545" #https://rinkeby.infura.io/
@@ -25,37 +28,32 @@ def get_deposit_hash(owner, token, value):
 
 def createSignature():
 	dep_blknum = getDepositBlock()
-	tx1 = Transaction(0, 0, 0, 0, 0, 0,
+	root,timestamp = getPlasmaBlock(dep_blknum)
+	"""tx1 = Transaction(0, 0, 0, 0, 0, 0,
                       NULL_ADDRESS,
-                      public_keys[1], 1e18, NULL_ADDRESS, 0)
+                      public_keys[1], 1e18, NULL_ADDRESS, 0)"""
 	_utxoPos = encode_utxo_id(dep_blknum, 0, 0)
-	_txBytes = get_deposit_hash(public_keys[1], NULL_ADDRESS, 1e18)
+	"""_txBytes = get_deposit_hash(public_keys[1], NULL_ADDRESS, 1e18)
 	merkle = FixedMerkle(16, [_txBytes], True)
 	_proof = merkle.create_membership_proof(_txBytes)
-	confirmSig1 = confirm_tx(tx1, root_chain.getPlasmaBlock(dep_blknum)[0], private_keys[1])
-	_sigs = tx1.sig1 + tx1.sig2 + confirmSig1
-	return _utxoPos, _txBytes, _proof, _sigs;
-
-def confirm_tx():
-    pass
+	confirmSig1 = confirm_tx(tx1,root,private_keys[1])
+	_sigs = tx1.sig1 + tx1.sig2 + confirmSig1"""
+	return _utxoPos;
 
 def startExit():
-	global contract_address
-	contract_address = getAddress();
-	root,timestamp = getPlasmaBlock();
-	print(root,timestamp)
-	while True:
-		_utxoPos, _txBytes, _proof, _sigs = createSignature()
-		break
-		arg_string =""+ str(_utxoPos) + " " +"0x0" + " " + "50000"
-		run_js('submitter.js',arg_string);
-		console.log("Withdrawal Submitted");
-		new_address = getAddress();
-		if(contract_address != new_address):
-			contract_address = new_address;
-		else:
-			block = getPlasmaBlock();
-	print('Stopping Tests')
+    global contract_address
+    contract_address = getAddress();
+    while True:
+        _utxoPos = createSignature()
+        arg_string =""+ str(_utxoPos) + " " + str(NULL_ADDRESS) + " " + str(1e18) + " " +str(contract_address) + " " +str(public_keys[1])+ " " + str(private_keys[1])
+        run_js('submitter.js',arg_string);
+        print("whithdrawal submitted");
+        new_address = getAddress();
+        if(contract_address != new_address):
+            contract_address = new_address;
+        else:
+            block = getPlasmaBlock();
+    print('Stopping Tests')
 
 def jsonParser(_info):
 	my_json = _info.content
@@ -64,9 +62,9 @@ def jsonParser(_info):
 	return json.loads(s)
 
 
-def getPlasmaBlock():
+def getPlasmaBlock(_blkNum):
 	print (contract_address)
-	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_call","params":[{"to":contract_address,"data":"0x86972254"}, "latest"]}
+	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_call","params":[{"to":contract_address,"data":"0x86972254" + (_blkNum).to_bytes(32, byteorder='big').hex()}, "latest"]}
 	r = requests.post(node_url, data=json.dumps(payload));
 	val = jsonParser(r)
 	print(val)
@@ -84,37 +82,38 @@ def getDepositBlock():
 	return deposit;
 
 def getAddress():
-	global last_block
-	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_blockNumber"}
-	r = requests.post(node_url, data=json.dumps(payload));
-	d = jsonParser(r);
-	block = int(d['result'],16)
-	i = 0;
-	while(block > last_block):
-		try:
-			payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_getTransactionByBlockNumberAndIndex","params":[hex(block),i]}
-			i+=1;
-			r = requests.post(node_url, data=json.dumps(payload));
-			d = jsonParser(r);
-			tx = d['result']
-			payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_getTransactionReceipt","params":[tx['hash']]}
-			r = requests.post(node_url, data=json.dumps(payload));
-			d = jsonParser(r);
-			tx = d['result']
-			try:
-				print(tx['gasUsed'])
-				if(tx['gasUsed'] == "0x429b07"):
-					_address = tx['contractAddress']
-					last_block = block
-					block = 0;
-					print('New Contract Address',_address)
-			except:
-				pass
-		except:
-			block = block - 1;
-			i=0
+    global last_block
+    payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_blockNumber"}
+    r = requests.post(node_url, data=json.dumps(payload));
+    d = jsonParser(r);
+    block = int(d['result'],16)
+    i = 0;
+    _address = 0
+    while(block > last_block):
+    	try:
+        	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_getTransactionByBlockNumberAndIndex","params":[hex(block),i]}
+        	i+=1;
+        	r = requests.post(node_url, data=json.dumps(payload));
+        	d = jsonParser(r);
+        	tx = d['result']
+        	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_getTransactionReceipt","params":[tx['hash']]}
+        	r = requests.post(node_url, data=json.dumps(payload));
+        	d = jsonParser(r);
+        	tx = d['result']
+    		try:
+        		print(tx['gasUsed'])
+        		if(tx['gasUsed'] == "0x429b07"):
+        			_address = tx['contractAddress']
+        			last_block = block
+        			block = 0;
+        			print('New Contract Address',_address)
+    		except:
+    			pass
+        except:
+        	block = block - 1;
+        	i=0
 
-	return _address;
+    return _address;
 
 def bytes2int(str):
  return int(str.encode('hex'), 32)
