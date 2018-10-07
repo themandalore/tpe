@@ -54,12 +54,27 @@ contract('Mining Tests', function(accounts) {
         res = res.logs[0].args['new_token'];
         console.log('res2',res);
         plasmaToken = await PlasmaToken.at(res);
-        assert(plasmaToken.balanceOf(accounts[1]) == 1e18);
+        console.log(await plasmaToken.balanceOf(accounts[1]))
+        assert(await plasmaToken.balanceOf(accounts[1]) == 1e18);
     }); 
-    // it("Test Withdrawal No Transfers", async function(){
-    //     vars = await oracletoken.getVariables();
-    //     assert(vars[1] == 1);
-    // }); 
+    it("Test Withdrawal No Transfers", async function(){
+        vars = await rootChain.deposit({from:accounts[1],value:1e18});
+       // await rootChain.submitBlock(web3.toHex("Nick"),{from:accounts[0]});
+        utxo_id = 1
+        blknum = utxo_id // BLKNUM_OFFSET
+        txindex =0
+        oindex = 0
+        utxo =  (blknum * BLKNUM_OFFSET) + (txindex * TXINDEX_OFFSET) + (oindex * 1)
+        console.log(utxo);
+
+        res = await rootChain.startDepositExit(utxo,"0x0000000000000000000000000000000000000000",1e18,{from:accounts[1],value:1234567890})
+       console.log('res',res.logs[0].args)
+        res = res.logs[0].args['new_token'];
+        console.log('res2',res);
+        plasmaToken = await PlasmaToken.at(res);
+        await rootChain.finalizeExits("0x0000000000000000000000000000000000000000",20)
+        assert(await plasmaToken.balanceOf(accounts[1]) == 0);
+    }); 
     // it("Test Two Withdrawals in one Final Exit", async function () {
     //     console.log('START MINING RIG!!');
     //     logNewValueWatcher = await promisifyLogWatch(oracletoken.NewValue({ fromBlock: 'latest' }));//or Event Mine?

@@ -34,7 +34,7 @@
         "id": 208,
         "nodeType": "ImportDirective",
         "scope": 336,
-        "sourceUnit": 1561,
+        "sourceUnit": 1562,
         "src": "27:25:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -188,7 +188,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                         "typeString": "struct RLPDecode.RLPItem[]"
                       },
                       "typeName": null,
@@ -230,10 +230,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "429:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -244,10 +244,10 @@
                           "lValueRequested": false,
                           "memberName": "toRlpItem",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1126,
+                          "referencedDeclaration": 1127,
                           "src": "429:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1098_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1099_memory_ptr_$",
                             "typeString": "function (bytes memory) pure returns (struct RLPDecode.RLPItem memory)"
                           }
                         },
@@ -261,7 +261,7 @@
                         "nodeType": "FunctionCall",
                         "src": "429:39:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       }
@@ -269,7 +269,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       ],
@@ -279,10 +279,10 @@
                         "name": "RLPDecode",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1560,
+                        "referencedDeclaration": 1561,
                         "src": "412:9:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                           "typeString": "type(library RLPDecode)"
                         }
                       },
@@ -293,10 +293,10 @@
                       "lValueRequested": false,
                       "memberName": "toList",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1202,
+                      "referencedDeclaration": 1203,
                       "src": "412:16:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr_$",
                         "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (struct RLPDecode.RLPItem memory[] memory)"
                       }
                     },
@@ -310,7 +310,7 @@
                     "nodeType": "FunctionCall",
                     "src": "412:57:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                       "typeString": "struct RLPDecode.RLPItem memory[] memory"
                     }
                   },
@@ -451,7 +451,7 @@
                                 "referencedDeclaration": 226,
                                 "src": "560:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -513,7 +513,7 @@
                               "nodeType": "IndexAccess",
                               "src": "560:23:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -521,7 +521,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -531,10 +531,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "543:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -545,10 +545,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "543:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -619,7 +619,7 @@
                                 "referencedDeclaration": 226,
                                 "src": "630:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -681,7 +681,7 @@
                               "nodeType": "IndexAccess",
                               "src": "630:23:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -689,7 +689,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -699,10 +699,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "613:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -713,10 +713,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "613:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -782,7 +782,7 @@
                             "referencedDeclaration": 226,
                             "src": "695:6:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                              "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                               "typeString": "struct RLPDecode.RLPItem memory[] memory"
                             }
                           },
@@ -844,7 +844,7 @@
                           "nodeType": "IndexAccess",
                           "src": "695:23:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                            "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                             "typeString": "struct RLPDecode.RLPItem memory"
                           }
                         }
@@ -852,7 +852,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                            "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                             "typeString": "struct RLPDecode.RLPItem memory"
                           }
                         ],
@@ -862,10 +862,10 @@
                           "name": "RLPDecode",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1560,
+                          "referencedDeclaration": 1561,
                           "src": "678:9:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                            "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                             "typeString": "type(library RLPDecode)"
                           }
                         },
@@ -876,10 +876,10 @@
                         "lValueRequested": false,
                         "memberName": "toUint",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1475,
+                        "referencedDeclaration": 1476,
                         "src": "678:16:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                           "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                         }
                       },
@@ -1038,7 +1038,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                         "typeString": "struct RLPDecode.RLPItem[]"
                       },
                       "typeName": null,
@@ -1080,10 +1080,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "916:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -1094,10 +1094,10 @@
                           "lValueRequested": false,
                           "memberName": "toRlpItem",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1126,
+                          "referencedDeclaration": 1127,
                           "src": "916:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1098_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1099_memory_ptr_$",
                             "typeString": "function (bytes memory) pure returns (struct RLPDecode.RLPItem memory)"
                           }
                         },
@@ -1111,7 +1111,7 @@
                         "nodeType": "FunctionCall",
                         "src": "916:35:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       }
@@ -1119,7 +1119,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       ],
@@ -1129,10 +1129,10 @@
                         "name": "RLPDecode",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1560,
+                        "referencedDeclaration": 1561,
                         "src": "899:9:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                           "typeString": "type(library RLPDecode)"
                         }
                       },
@@ -1143,10 +1143,10 @@
                       "lValueRequested": false,
                       "memberName": "toList",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1202,
+                      "referencedDeclaration": 1203,
                       "src": "899:16:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr_$",
                         "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (struct RLPDecode.RLPItem memory[] memory)"
                       }
                     },
@@ -1160,7 +1160,7 @@
                     "nodeType": "FunctionCall",
                     "src": "899:53:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                       "typeString": "struct RLPDecode.RLPItem memory[] memory"
                     }
                   },
@@ -1185,7 +1185,7 @@
                               "referencedDeclaration": 282,
                               "src": "1023:6:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                 "typeString": "struct RLPDecode.RLPItem memory[] memory"
                               }
                             },
@@ -1284,7 +1284,7 @@
                             "nodeType": "IndexAccess",
                             "src": "1023:22:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           }
@@ -1292,7 +1292,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           ],
@@ -1302,10 +1302,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "1003:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -1316,10 +1316,10 @@
                           "lValueRequested": false,
                           "memberName": "toAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1440,
+                          "referencedDeclaration": 1441,
                           "src": "1003:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_address_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_address_$",
                             "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (address)"
                           }
                         },
@@ -1351,7 +1351,7 @@
                               "referencedDeclaration": 282,
                               "src": "1088:6:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                 "typeString": "struct RLPDecode.RLPItem memory[] memory"
                               }
                             },
@@ -1381,7 +1381,7 @@
                             "nodeType": "IndexAccess",
                             "src": "1088:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           }
@@ -1389,7 +1389,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           ],
@@ -1399,10 +1399,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "1068:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -1413,10 +1413,10 @@
                           "lValueRequested": false,
                           "memberName": "toAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1440,
+                          "referencedDeclaration": 1441,
                           "src": "1068:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_address_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_address_$",
                             "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (address)"
                           }
                         },
@@ -1448,7 +1448,7 @@
                               "referencedDeclaration": 282,
                               "src": "1138:6:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                 "typeString": "struct RLPDecode.RLPItem memory[] memory"
                               }
                             },
@@ -1547,7 +1547,7 @@
                             "nodeType": "IndexAccess",
                             "src": "1138:22:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           }
@@ -1555,7 +1555,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           ],
@@ -1565,10 +1565,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "1121:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -1579,10 +1579,10 @@
                           "lValueRequested": false,
                           "memberName": "toUint",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1475,
+                          "referencedDeclaration": 1476,
                           "src": "1121:16:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                             "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                           }
                         },
@@ -1625,7 +1625,7 @@
                                 "referencedDeclaration": 282,
                                 "src": "1205:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -1655,7 +1655,7 @@
                               "nodeType": "IndexAccess",
                               "src": "1205:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -1663,7 +1663,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -1673,10 +1673,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "1188:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -1687,10 +1687,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "1188:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -1724,7 +1724,7 @@
                                 "referencedDeclaration": 282,
                                 "src": "1235:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -1754,7 +1754,7 @@
                               "nodeType": "IndexAccess",
                               "src": "1235:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -1762,7 +1762,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -1772,10 +1772,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "1218:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -1786,10 +1786,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "1218:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -1996,7 +1996,7 @@
         "id": 208,
         "nodeType": "ImportDirective",
         "scope": 336,
-        "sourceUnit": 1561,
+        "sourceUnit": 1562,
         "src": "27:25:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2150,7 +2150,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                         "typeString": "struct RLPDecode.RLPItem[]"
                       },
                       "typeName": null,
@@ -2192,10 +2192,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "429:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -2206,10 +2206,10 @@
                           "lValueRequested": false,
                           "memberName": "toRlpItem",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1126,
+                          "referencedDeclaration": 1127,
                           "src": "429:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1098_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1099_memory_ptr_$",
                             "typeString": "function (bytes memory) pure returns (struct RLPDecode.RLPItem memory)"
                           }
                         },
@@ -2223,7 +2223,7 @@
                         "nodeType": "FunctionCall",
                         "src": "429:39:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       }
@@ -2231,7 +2231,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       ],
@@ -2241,10 +2241,10 @@
                         "name": "RLPDecode",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1560,
+                        "referencedDeclaration": 1561,
                         "src": "412:9:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                           "typeString": "type(library RLPDecode)"
                         }
                       },
@@ -2255,10 +2255,10 @@
                       "lValueRequested": false,
                       "memberName": "toList",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1202,
+                      "referencedDeclaration": 1203,
                       "src": "412:16:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr_$",
                         "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (struct RLPDecode.RLPItem memory[] memory)"
                       }
                     },
@@ -2272,7 +2272,7 @@
                     "nodeType": "FunctionCall",
                     "src": "412:57:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                       "typeString": "struct RLPDecode.RLPItem memory[] memory"
                     }
                   },
@@ -2413,7 +2413,7 @@
                                 "referencedDeclaration": 226,
                                 "src": "560:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -2475,7 +2475,7 @@
                               "nodeType": "IndexAccess",
                               "src": "560:23:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -2483,7 +2483,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -2493,10 +2493,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "543:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -2507,10 +2507,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "543:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -2581,7 +2581,7 @@
                                 "referencedDeclaration": 226,
                                 "src": "630:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -2643,7 +2643,7 @@
                               "nodeType": "IndexAccess",
                               "src": "630:23:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -2651,7 +2651,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -2661,10 +2661,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "613:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -2675,10 +2675,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "613:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -2744,7 +2744,7 @@
                             "referencedDeclaration": 226,
                             "src": "695:6:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                              "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                               "typeString": "struct RLPDecode.RLPItem memory[] memory"
                             }
                           },
@@ -2806,7 +2806,7 @@
                           "nodeType": "IndexAccess",
                           "src": "695:23:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                            "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                             "typeString": "struct RLPDecode.RLPItem memory"
                           }
                         }
@@ -2814,7 +2814,7 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                            "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                             "typeString": "struct RLPDecode.RLPItem memory"
                           }
                         ],
@@ -2824,10 +2824,10 @@
                           "name": "RLPDecode",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1560,
+                          "referencedDeclaration": 1561,
                           "src": "678:9:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                            "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                             "typeString": "type(library RLPDecode)"
                           }
                         },
@@ -2838,10 +2838,10 @@
                         "lValueRequested": false,
                         "memberName": "toUint",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1475,
+                        "referencedDeclaration": 1476,
                         "src": "678:16:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                           "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                         }
                       },
@@ -3000,7 +3000,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                         "typeString": "struct RLPDecode.RLPItem[]"
                       },
                       "typeName": null,
@@ -3042,10 +3042,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "916:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -3056,10 +3056,10 @@
                           "lValueRequested": false,
                           "memberName": "toRlpItem",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1126,
+                          "referencedDeclaration": 1127,
                           "src": "916:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1098_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$_t_struct$_RLPItem_$1099_memory_ptr_$",
                             "typeString": "function (bytes memory) pure returns (struct RLPDecode.RLPItem memory)"
                           }
                         },
@@ -3073,7 +3073,7 @@
                         "nodeType": "FunctionCall",
                         "src": "916:35:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       }
@@ -3081,7 +3081,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_RLPItem_$1098_memory_ptr",
+                          "typeIdentifier": "t_struct$_RLPItem_$1099_memory_ptr",
                           "typeString": "struct RLPDecode.RLPItem memory"
                         }
                       ],
@@ -3091,10 +3091,10 @@
                         "name": "RLPDecode",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1560,
+                        "referencedDeclaration": 1561,
                         "src": "899:9:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                          "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                           "typeString": "type(library RLPDecode)"
                         }
                       },
@@ -3105,10 +3105,10 @@
                       "lValueRequested": false,
                       "memberName": "toList",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1202,
+                      "referencedDeclaration": 1203,
                       "src": "899:16:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr_$",
                         "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (struct RLPDecode.RLPItem memory[] memory)"
                       }
                     },
@@ -3122,7 +3122,7 @@
                     "nodeType": "FunctionCall",
                     "src": "899:53:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                       "typeString": "struct RLPDecode.RLPItem memory[] memory"
                     }
                   },
@@ -3147,7 +3147,7 @@
                               "referencedDeclaration": 282,
                               "src": "1023:6:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                 "typeString": "struct RLPDecode.RLPItem memory[] memory"
                               }
                             },
@@ -3246,7 +3246,7 @@
                             "nodeType": "IndexAccess",
                             "src": "1023:22:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           }
@@ -3254,7 +3254,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           ],
@@ -3264,10 +3264,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "1003:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -3278,10 +3278,10 @@
                           "lValueRequested": false,
                           "memberName": "toAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1440,
+                          "referencedDeclaration": 1441,
                           "src": "1003:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_address_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_address_$",
                             "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (address)"
                           }
                         },
@@ -3313,7 +3313,7 @@
                               "referencedDeclaration": 282,
                               "src": "1088:6:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                 "typeString": "struct RLPDecode.RLPItem memory[] memory"
                               }
                             },
@@ -3343,7 +3343,7 @@
                             "nodeType": "IndexAccess",
                             "src": "1088:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           }
@@ -3351,7 +3351,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           ],
@@ -3361,10 +3361,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "1068:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -3375,10 +3375,10 @@
                           "lValueRequested": false,
                           "memberName": "toAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1440,
+                          "referencedDeclaration": 1441,
                           "src": "1068:19:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_address_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_address_$",
                             "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (address)"
                           }
                         },
@@ -3410,7 +3410,7 @@
                               "referencedDeclaration": 282,
                               "src": "1138:6:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                 "typeString": "struct RLPDecode.RLPItem memory[] memory"
                               }
                             },
@@ -3509,7 +3509,7 @@
                             "nodeType": "IndexAccess",
                             "src": "1138:22:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           }
@@ -3517,7 +3517,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                              "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                               "typeString": "struct RLPDecode.RLPItem memory"
                             }
                           ],
@@ -3527,10 +3527,10 @@
                             "name": "RLPDecode",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1560,
+                            "referencedDeclaration": 1561,
                             "src": "1121:9:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                              "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                               "typeString": "type(library RLPDecode)"
                             }
                           },
@@ -3541,10 +3541,10 @@
                           "lValueRequested": false,
                           "memberName": "toUint",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1475,
+                          "referencedDeclaration": 1476,
                           "src": "1121:16:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                            "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                             "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                           }
                         },
@@ -3587,7 +3587,7 @@
                                 "referencedDeclaration": 282,
                                 "src": "1205:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -3617,7 +3617,7 @@
                               "nodeType": "IndexAccess",
                               "src": "1205:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -3625,7 +3625,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -3635,10 +3635,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "1188:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -3649,10 +3649,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "1188:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -3686,7 +3686,7 @@
                                 "referencedDeclaration": 282,
                                 "src": "1235:6:4",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1098_memory_$dyn_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_RLPItem_$1099_memory_$dyn_memory_ptr",
                                   "typeString": "struct RLPDecode.RLPItem memory[] memory"
                                 }
                               },
@@ -3716,7 +3716,7 @@
                               "nodeType": "IndexAccess",
                               "src": "1235:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             }
@@ -3724,7 +3724,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_RLPItem_$1098_memory",
+                                "typeIdentifier": "t_struct$_RLPItem_$1099_memory",
                                 "typeString": "struct RLPDecode.RLPItem memory"
                               }
                             ],
@@ -3734,10 +3734,10 @@
                               "name": "RLPDecode",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1560,
+                              "referencedDeclaration": 1561,
                               "src": "1218:9:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1560_$",
+                                "typeIdentifier": "t_type$_t_contract$_RLPDecode_$1561_$",
                                 "typeString": "type(library RLPDecode)"
                               }
                             },
@@ -3748,10 +3748,10 @@
                             "lValueRequested": false,
                             "memberName": "toUint",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1475,
+                            "referencedDeclaration": 1476,
                             "src": "1218:16:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1098_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_RLPItem_$1099_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct RLPDecode.RLPItem memory) pure returns (uint256)"
                             }
                           },
@@ -3937,5 +3937,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-07T06:08:52.183Z"
+  "updatedAt": "2018-10-07T06:40:51.603Z"
 }

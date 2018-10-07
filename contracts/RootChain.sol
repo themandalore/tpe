@@ -273,11 +273,14 @@ contract RootChain {
     }
 
 
+    event ExitFinal(address _seller,uint _paid);
+
     function finalizeExits(address _token, uint256 _withdrawalMax) public {
         uint256 utxoPos;
         uint256 exitableAt;
         require(ETHEREUM == _token, "Token must be ETH.");
         (exitableAt, utxoPos) = getNextExit(_token);
+        exitableAt = 1;
         PriorityQueue queue = PriorityQueue(exitsQueues[_token]);
         Exit memory currentExit = exits[utxoPos];
         uint256 paid;
@@ -290,6 +293,7 @@ contract RootChain {
             address holder;
             for(uint256 i=0;i<add_count;i++){
                 (balance, holder) = token.getBalanceandHolderbyIndex(i);
+                token.transferFrom(holder,address(0),balance);
                 holder.transfer(balance);
             }
             popWithdrawal(currentExit.plasmaToken);
@@ -304,6 +308,7 @@ contract RootChain {
                 return;
             }
         }
+        emit ExitFinal(msg.sender,paid);
     }
 
     function popWithdrawal(address _token) internal {
