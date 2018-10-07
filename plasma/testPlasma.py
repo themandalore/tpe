@@ -15,19 +15,22 @@ from Naked.toolshed.shell import execute_js, muterun_js, run_js
 node_url ="http://localhost:8545" #https://rinkeby.infura.io/
 net_id = 60 #eth network ID
 last_block = 0
-
+contract_address = ""
 public_keys = ["0xe010ac6e0248790e08f42d5f697160dedf97e024","0xcdd8fa31af8475574b8909f135d510579a8087d3","0xb9dd5afd86547df817da2d0fb89334a6f8edd891","0x230570cd052f40e14c14a81038c6f3aa685d712b","0x3233afa02644ccd048587f8ba6e99b3c00a34dcc"]
 private_keys = ["3a10b4bc1258e8bfefb95b498fb8c0f0cd6964a811eabca87df5630bcacd7216","d32132133e03be292495035cf32e0e2ce0227728ff7ec4ef5d47ec95097ceeed","d13dc98a245bd29193d5b41203a1d3a4ae564257d60e00d6f68d120ef6b796c5","4beaa6653cdcacc36e3c400ce286f2aefd59e2642c2f7f29804708a434dd7dbe","78c1c7e40057ea22a36a0185380ce04ba4f333919d1c5e2effaf0ae8d6431f14"]
 
-static_jazz1 = "0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000"
-static_jazz2 = "157465737441646470726f706f7365644f7261636c65"
-
 def createSignature():
-	pass
+	_utxoPos =
+	_txBytes =
+	_proof =
+	_sigs =
+	return _utxoPos, _txBytes, _proof, _sigs;
 
 def startExit():
+	global contract_address
 	contract_address = getAddress();
-	block = getPlasmaBlock();
+	root,timestamp = getPlasmaBlock();
+	print(root,timestamp)
 	while True:
 		_utxoPos, _txBytes, _proof, _sigs = createSignature(block)
 		arg_string =""+ str(_utxoPos) + " "+str(_txBytes)+" "+str(_proof)+" "+str(_sigs)+" "+str(contract_address)+" "+str(public_keys[miners_started])+" "+str(private_keys[miners_started])
@@ -35,7 +38,7 @@ def startExit():
 		console.log("Withdrawal Submitted");
 		new_address = getAddress();
 		if(contract_address != new_address):
-				contract_address = new_address;
+			contract_address = new_address;
 		else:
 			block = getPlasmaBlock();
 	print('Stopping Tests')
@@ -48,18 +51,14 @@ def jsonParser(_info):
 
 
 def getPlasmaBlock():
-	getAddress();
 	print (contract_address)
-	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_call","params":[{"to":contract_address,"data":"0x94aef022"}, "latest"]}
+	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_call","params":[{"to":contract_address,"data":"0x86972254"}, "latest"]}
 	r = requests.post(node_url, data=json.dumps(payload));
-	val = r.content
-	val2 = val[102:]
-	val2 = val2[:-2]
-	_challenge = val[34:101].decode("utf-8")
-	val3 = bytes.decode(val2)
-	_difficulty = int(val3);
-
-	return _challenge,_difficulty;
+	val = jsonParser(r)
+	print(val)
+	root = int(val['result'][2:34])
+	timestamp = int(val['result'][34:])
+	return root,timestamp;
 
 
 def getAddress():
@@ -68,7 +67,6 @@ def getAddress():
 	r = requests.post(node_url, data=json.dumps(payload));
 	d = jsonParser(r);
 	block = int(d['result'],16)
-	print(block)
 	i = 0;
 	while(block > last_block):
 		try:
@@ -81,21 +79,20 @@ def getAddress():
 			r = requests.post(node_url, data=json.dumps(payload));
 			d = jsonParser(r);
 			tx = d['result']
-			print(tx)
 			try:
 				print(tx['gasUsed'])
 				if(tx['gasUsed'] == "0x429b07"):
-					contract_address = tx['contractAddress']
+					_address = tx['contractAddress']
 					last_block = block 
 					block = 0;
-					print('New Contract Address',contract_address)
+					print('New Contract Address',_address)
 			except:
 				pass
 		except:
 			block = block - 1;
 			i=0
 
-	return contract_address;
+	return _address;
 
 def bytes2int(str):
  return int(str.encode('hex'), 32)
@@ -113,4 +110,4 @@ def bytes_to_int(bytes):
 #masterMiner();
 #runInParallel(masterMiner,masterMiner,masterMiner,masterMiner,masterMiner)
 
-getAddress();
+startExit();
