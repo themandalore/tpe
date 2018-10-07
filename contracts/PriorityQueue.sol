@@ -33,8 +33,8 @@ contract PriorityQueue {
      * Constructor
      */
 
-    constructor() public {
-        owner = msg.sender;
+    constructor(address _contract) public {
+        owner = _contract;
         heapList = [0];
         currentSize = 0;
     }
