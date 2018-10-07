@@ -3,14 +3,13 @@ from web3 import Web3
 import requests,json, time,random
 import pandas as pd
 from Naked.toolshed.shell import execute_js, muterun_js, run_js
-from multiprocessing import Process, freeze_support
-import pytest
-import rlp
-from .transaction import Transaction, UnsignedTransaction
-from .fixed_merkle import FixedMerkle
-from .utils import confirm_tx, get_deposit_hash
-from .transactions import encode_utxo_id, decode_utxo_id
-from .constants import NULL_ADDRESS, NULL_ADDRESS_HEX
+# import pytest
+# import rlp
+# from .transaction import Transaction, UnsignedTransaction
+# from .fixed_merkle import FixedMerkle
+# from .utils import confirm_tx, get_deposit_hash
+# from .transactions import encode_utxo_id, decode_utxo_id
+# from .constants import NULL_ADDRESS, NULL_ADDRESS_HEX
 
 
 node_url ="http://localhost:8545" #https://rinkeby.infura.io/
@@ -69,6 +68,7 @@ def getAddress():
 	r = requests.post(node_url, data=json.dumps(payload));
 	d = jsonParser(r);
 	block = int(d['result'],16)
+	print(block)
 	i = 0;
 	while(block > last_block):
 		try:
@@ -81,11 +81,11 @@ def getAddress():
 			r = requests.post(node_url, data=json.dumps(payload));
 			d = jsonParser(r);
 			tx = d['result']
+			print(tx)
 			try:
-				logs =tx['logs'][0]['data']
-				console.log('LOGS',logs);
-				if static_jazz1 and static_jazz2 in logs:
-					contract_address = logs.replace(static_jazz1,'').replace(static_jazz2,'').replace("000000000000000000000000000000000000000000000000000000000000000000000000000000000000",'')
+				print(tx['gasUsed'])
+				if(tx['gasUsed'] == "0x429b07"):
+					contract_address = tx['contractAddress']
 					last_block = block 
 					block = 0;
 					print('New Contract Address',contract_address)
@@ -113,4 +113,4 @@ def bytes_to_int(bytes):
 #masterMiner();
 #runInParallel(masterMiner,masterMiner,masterMiner,masterMiner,masterMiner)
 
-#getAddress();
+getAddress();
