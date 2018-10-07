@@ -15,8 +15,8 @@ NULL_BYTE = b'\x00'
 NULL_ADDRESS = NULL_BYTE * 20
 
 
-node_url ="http://localhost:8545" #https://rinkeby.infura.io/
-net_id = 60 #eth network ID
+node_url = "http://localhost:8545" #https://rinkeby.infura.io/
+net_id = 60 # eth network ID
 last_block = 0
 contract_address = ""
 public_keys = ["0xe010ac6e0248790e08f42d5f697160dedf97e024","0xcdd8fa31af8475574b8909f135d510579a8087d3","0xb9dd5afd86547df817da2d0fb89334a6f8edd891","0x230570cd052f40e14c14a81038c6f3aa685d712b","0x3233afa02644ccd048587f8ba6e99b3c00a34dcc"]
@@ -57,21 +57,21 @@ def startExit():
 	print('Stopping Tests')
 
 def jsonParser(_info):
-	my_json = _info.content
-	data = json.loads(my_json)
-	s = json.dumps(data, indent=4, sort_keys=True)
-	return json.loads(s)
+    my_json = _info.content
+    data = json.loads(my_json)
+    s = json.dumps(data, indent=4, sort_keys=True)
+    return json.loads(s)
 
 
 def getPlasmaBlock(_blkNum):
-	print (contract_address)
-	payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_call","params":[{"to":contract_address,"data":"0x86972254" + (_blkNum).to_bytes(32, byteorder='big').hex()}, "latest"]}
-	r = requests.post(node_url, data=json.dumps(payload));
-	val = jsonParser(r)
-	print(val)
-	root = val['result'][0:34]
-	timestamp = int(val['result'][34:])
-	return root,timestamp;
+    print (contract_address)
+    payload = {"jsonrpc":"2.0","id":net_id,"method":"eth_call","params":[{"to":contract_address,"data":"0x86972254" + (_blkNum).to_bytes(32, byteorder='big').hex()}, "latest"]}
+    r = requests.post(node_url, data=json.dumps(payload));
+    val = jsonParser(r)
+    print(val)
+    root = val['result'][0:34]
+    timestamp = int(val['result'][34:])
+    return root,timestamp;
 
 def getDepositBlock():
 	print (contract_address)
