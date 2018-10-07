@@ -178,11 +178,9 @@ contract RootChain {
     {
         uint256 blknum = _depositPos / 1000000000;
         require(blknum % CHILD_BLOCK_INTERVAL != 0, "Referenced block must be a deposit block.");
-
-        // Validate the given owner and amount.
-        // bytes32 root = plasmaBlocks[blknum].root;
-        // bytes32 depositHash = keccak256(msg.sender, _token, _amount);
-        // require(root == depositHash, "Root hash must match deposit hash.");
+        bytes32 root = plasmaBlocks[blknum].root;
+        bytes32 depositHash = keccak256(msg.sender, _token, _amount);
+        require(root == depositHash, "Root hash must match deposit hash.");
 
         addExitToQueue(_depositPos, msg.sender, _token, _amount, plasmaBlocks[blknum].timestamp);
     }
