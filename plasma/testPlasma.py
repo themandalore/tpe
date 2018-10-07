@@ -9,10 +9,10 @@ from Naked.toolshed.shell import execute_js, muterun_js, run_js
 # from .fixed_merkle import FixedMerkle
 # from .utils import confirm_tx, get_deposit_hash
 # from .transactions import encode_utxo_id, decode_utxo_id
-# from .constants import NULL_ADDRESS, NULL_ADDRESS_HEX
-NULL_ADDRESS = NULL_BYTE * 20
+from constants import NULL_ADDRESS, NULL_ADDRESS_HEX
 
-node_url ="http://localhost:8545" #https://rinkeby.infura.io/
+
+node_url ="http://localhost:7545" #https://rinkeby.infura.io/
 net_id = 60 #eth network ID
 last_block = 0
 contract_address = ""
@@ -30,11 +30,14 @@ def createSignature():
                       public_keys[1], 1e18, NULL_ADDRESS, 0)
 	_utxoPos = encode_utxo_id(dep_blknum, 0, 0)
 	_txBytes = get_deposit_hash(public_keys[1], NULL_ADDRESS, 1e18)
-	 merkle = FixedMerkle(16, [_txBytes], True)
+	merkle = FixedMerkle(16, [_txBytes], True)
 	_proof = merkle.create_membership_proof(_txBytes)
 	confirmSig1 = confirm_tx(tx1, root_chain.getPlasmaBlock(dep_blknum)[0], private_keys[1])
 	_sigs = tx1.sig1 + tx1.sig2 + confirmSig1
 	return _utxoPos, _txBytes, _proof, _sigs;
+
+def confirm_tx():
+    pass
 
 def startExit():
 	global contract_address
@@ -44,7 +47,7 @@ def startExit():
 	while True:
 		_utxoPos, _txBytes, _proof, _sigs = createSignature()
 		break
-		arg_string =""+ str(_utxoPos) + " "+str(_txBytes)+" "+str(_proof)+" "+str(_sigs)+" "+str(contract_address)+" "+str(public_keys[miners_started])+" "+str(private_keys[miners_started])
+		arg_string =""+ str(_utxoPos) + " " +"0x0" + " " + "50000"
 		run_js('submitter.js',arg_string);
 		console.log("Withdrawal Submitted");
 		new_address = getAddress();
@@ -102,7 +105,7 @@ def getAddress():
 				print(tx['gasUsed'])
 				if(tx['gasUsed'] == "0x429b07"):
 					_address = tx['contractAddress']
-					last_block = block 
+					last_block = block
 					block = 0;
 					print('New Contract Address',_address)
 			except:
